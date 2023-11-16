@@ -1,8 +1,10 @@
-body {
+* {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
 }
+
+/*styling for navBar*/
 
 nav {
   background: linear-gradient(135deg, #1daffe 60%, cyan);
@@ -12,20 +14,26 @@ nav {
   justify-content: space-between;
 }
 
-nav a {
+a {
   float: left;
-  display: block;
+
   color: white;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
 }
 
-nav a:hover {
-  background-color: #ddd;
-  color: black;
+.nav-options a {
+  transition: transform 0.3s, box-shadow 0.3s;
 }
-
+.nav-options a:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  background-color: #ff7e47;
+}
+.nav-options a:hover {
+  transform: scale(1.1);
+}
 .logo {
   float: left;
   padding: 10px;
@@ -82,6 +90,92 @@ nav a:hover {
 
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+/*styling for categories section*/
+.main {
+  background-color: #f0f0f0;
+}
+.categories-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 85vh;
+}
+.categories-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.category-card {
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  width: 200px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.category-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 15px #ff7e47;
+}
+
+.category-icon {
+  font-size: 40px;
+  margin-bottom: 10px;
+  transition: transform 0.3s;
+}
+
+.category-card:hover .category-icon {
+  transform: scale(1.1);
+}
+
+.category-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.category-description {
+  font-size: 14px;
+  color: #666;
+  margin-top: 10px;
+}
+
+#category-science .category-title {
+  color: #4a90e2;
+}
+
+#category-math .category-title {
+  color: #50e3c2;
+}
+#category-history .category-title {
+  color: #bd10e0;
+}
+
+#category-geography .category-title {
+  color: #f8e71c;
+}
+
+#category-sports .category-title {
+  color: #7ed321;
+}
+
+.category-card:hover .category-title {
+  color: #ff7e47;
+}
+#category-science:hover .category-title,
+#category-math:hover .category-title,
+#category-history:hover .category-title,
+#category-geography:hover .category-title,
+#category-sports:hover .category-title {
+  color: #ff7e47;
 }
 
 @media screen and (max-width: 600px) {
