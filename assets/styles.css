@@ -17,7 +17,7 @@ nav {
 a {
   float: left;
 
-  color: white;
+  color: #ff7e47;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -96,11 +96,23 @@ a {
 .main {
   background-color: #f0f0f0;
 }
+.categories-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 5rem;
+  margin-top: 3rem;
+  color: #ff7e47;
+
+  text-shadow: -1px -1px 0 #1919a5, 1px -1px 0 purple, -1px 1px 0 #ff7e47,
+    1px 1px 0 blue;
+  font-size: 50px;
+}
 .categories-section {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 85vh;
+  height: 30vh;
 }
 .categories-container {
   display: flex;
