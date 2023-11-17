@@ -8,24 +8,17 @@
     <script src="./assets/index.js"></script>
   </head>
   <body>
+    <!-- navbar section -->
     <nav>
-      <div class="logo">
-        <img src="./images/no-background logo.png" alt="Logo" width="80" />
-      </div>
       <div class="nav-options">
-        <a href="#home">Home</a>
-        <a href="#Categories">Categories</a>
-        <a href="#quiz">Quiz</a>
-      </div>
-      <div class="dropdown">
-        <button class="dropbtn">More</button>
-        <div class="dropdown-content">
-          <a href="#highscores">High Scores</a>
-          <a href="#about">About</a>
-        </div>
+        <a class="nav-links" href="#home">Home</a>
+        <a class="nav-links" href="#Categories">Categories</a>
+        <a class="nav-links" href="#quiz">Quiz Top Scores</a>
+        <a class="nav-links" href="#About">About</a>
       </div>
     </nav>
     <main>
+      <!-- categories section -->
       <div class="categories-title">
         <h1>Quiz App</h1>
       </div>
@@ -60,6 +53,65 @@
           </div>
         </div>
       </div>
+      <!-- button section -->
+      <div class="btn-container">
+        <a id="button" class="button" href="">
+          <button id="playButton" class="play-btn not-ready">
+            <span class="btn-text">Play Now</span>
+          </button></a
+        >
+      </div>
     </main>
+    <script>
+      function toggleCategoryAndPlayButton(categoryId) {
+        const category = document.getElementById(categoryId);
+        category.addEventListener('click', function () {
+          categories.forEach(function (otherCategoryId) {
+            if (otherCategoryId !== categoryId) {
+              document
+                .getElementById(otherCategoryId)
+                .classList.remove('chosen');
+            }
+          });
+
+          this.classList.toggle('chosen');
+
+          const playButton = document.getElementById('playButton');
+          if (this.classList.contains('chosen')) {
+            playButton.classList.remove('not-ready');
+            playButton.classList.add('ready');
+            document.getElementById('button').href = determineLink(categoryId);
+          } else {
+            playButton.classList.remove('ready');
+            playButton.classList.add('not-ready');
+            document.getElementById('button').href = '';
+          }
+        });
+      }
+      function determineLink(categoryId) {
+        switch (categoryId) {
+          case 'category-science':
+            return './science-quiz.html';
+          case 'category-math':
+            return './maths-quiz.html';
+          case 'category-history':
+            return './history-quiz.html';
+          case 'category-geography':
+            return './geography-quiz.html';
+          case 'category-sports':
+            return './sports-quiz.html';
+          default:
+            return '';
+        }
+      }
+      const categories = [
+        'category-science',
+        'category-math',
+        'category-history',
+        'category-geography',
+        'category-sports',
+      ];
+      categories.forEach(toggleCategoryAndPlayButton);
+    </script>
   </body>
 </html>
