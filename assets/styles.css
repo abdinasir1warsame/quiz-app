@@ -5,7 +5,12 @@
 }
 
 /*styling for navBar*/
-
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: radial-gradient(ellipse at center, white 87%, #f54900d0 100%);
+}
 nav {
   overflow: hidden;
   display: flex;
@@ -14,7 +19,7 @@ nav {
 }
 
 .nav-links {
-  color: #ff7e47;
+  color: #fb6c2f;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -133,7 +138,7 @@ nav {
 
 .category-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 6px 15px #ff7e47;
+  box-shadow: 0 10px 20px #ff7e47;
 }
 
 .category-icon {
@@ -202,7 +207,7 @@ nav {
   border-radius: 25px;
   background-color: grey;
   position: relative;
-  cursor: pointer;
+
   outline: none;
   transition: background-color 0.3s ease;
   display: flex;
@@ -213,7 +218,8 @@ nav {
   text-transform: uppercase;
   overflow: hidden;
   font-weight: normal;
-  margin-top: 4rem;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
 }
 
 .btn-text {
@@ -232,6 +238,7 @@ nav {
   animation: pulse 1s infinite;
 
   font-weight: bolder;
+  cursor: body;
 }
 
 @keyframes pulse {

@@ -1,0 +1,126 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+
+  background: radial-gradient(ellipse at center, white 80%, #f54900d0 100%);
+}
+header {
+  display: flex;
+  flex: row;
+  justify-content: center;
+}
+
+.container {
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+/* Title with Glowing Effect */
+.title {
+  font-size: 5rem;
+  color: #ff5722;
+  text-shadow: 0 0 10px #ff7e47, 0 0 60px #ff7e47, 0 0 80px #ff7e47,
+    0 0 40px #ff7e47;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 20px black, 0 0 30px #ff7e47, 0 0 40px #ff7e47,
+      0 0 50px black;
+  }
+  to {
+    text-shadow: 0 0 10px black, 0 0 20px #ff7e47, 0 0 30px black,
+      0 0 40px black;
+  }
+}
+
+/* Quiz Area Styling */
+.quiz-area {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+}
+
+.question-box {
+  margin: 20px 0;
+}
+.question {
+  color: #d6602d;
+  font-size: 2rem;
+}
+
+.options-box {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.option {
+  background-color: white;
+  color: #fb6c2f;
+  border: 2px solid #ffd700;
+  border-radius: 5px;
+  padding: 15px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  box-shadow: 0px 0px 10px 3px #f86120;
+  transition: transform 0.3s, background-color 0.3s;
+  font-weight: bolder;
+  letter-spacing: 3px;
+}
+
+.option:hover {
+  transform: translateY(-5px);
+}
+
+/* Footer Button Styling */
+.footer {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-top: 2rem;
+}
+
+.next-btn {
+  background-color: #ff7e47;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  height: 4rem;
+  width: 13rem;
+  font-weight: bolder;
+}
+
+/* Responsive Design for Smaller Screens */
+@media only screen and (max-width: 768px) {
+  .options-box {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Game Info: Timer and Score */
+.game-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.timer,
+.score {
+  background-color: white;
+  color: #fb6c2f;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  box-shadow: 0px 0px 10px 3px #f86120;
+  font-weight: bold;
+}
