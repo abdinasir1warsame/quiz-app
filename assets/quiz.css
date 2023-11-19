@@ -23,7 +23,7 @@ header {
   color: #ff5722;
   text-shadow: 0 0 10px #ff7e47, 0 0 60px #ff7e47, 0 0 80px #ff7e47,
     0 0 40px #ff7e47;
-  animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 0.2s ease-in-out infinite alternate;
 }
 
 @keyframes glow {
@@ -56,16 +56,17 @@ header {
 .options-box {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
+  gap: 20px;
+  column-gap: 10px;
 }
 
 .option {
   background-color: white;
   color: #fb6c2f;
-  border: 2px solid #ffd700;
+  border: 2px solid #d6602d;
   border-radius: 5px;
-  padding: 15px;
-  font-size: 1.3rem;
+  padding: 25px;
+  font-size: 1.7rem;
   cursor: pointer;
   box-shadow: 0px 0px 10px 3px #f86120;
   transition: transform 0.3s, background-color 0.3s;
@@ -76,17 +77,91 @@ header {
 .option:hover {
   transform: translateY(-5px);
 }
-
+.option.chosen {
+  background-color: white;
+  color: #fb6c2f;
+  border: 2px solid #d6602d;
+  border-radius: 5px;
+  padding: 25px;
+  font-size: 2rem;
+  cursor: pointer;
+  box-shadow: 0px 0px 10px 3px #f86120;
+  transition: transform 0.3s, background-color 0.3s;
+  font-weight: bolder;
+  letter-spacing: 3px;
+  transform: translateY(-5px);
+}
+.option.correct {
+  background-color: white;
+  color: rgb(150, 237, 140);
+  border: 2px solid #d6602d;
+  border-radius: 5px;
+  padding: 25px;
+  font-size: 2rem;
+  cursor: pointer;
+  box-shadow: 0px 0px 10px 3px #93f820;
+  transition: transform 0.3s, background-color 0.3s;
+  font-weight: bolder;
+  letter-spacing: 3px;
+  text-shadow: 0 0 10px rgb(89, 133, 23), 0 0 60px greenyellow, 0 0 80px white,
+    0 0 40px #060302;
+  animation: glow 0.2s ease-in-out infinite alternate;
+}
+.option.wrong {
+  background-color: white;
+  color: rgb(202, 26, 6);
+  border: 2px solid #d62d2d;
+  border-radius: 5px;
+  padding: 25px;
+  font-size: 2rem;
+  cursor: pointer;
+  box-shadow: 0px 0px 10px 3px #b40808;
+  transition: transform 0.3s, background-color 0.3s;
+  font-weight: bolder;
+  letter-spacing: 3px;
+  text-shadow: 0 0 10px rgb(133, 23, 23), 0 0 60px rgb(255, 75, 47),
+    0 0 80px white, 0 0 40px #060302;
+  animation: glow 0.2s ease-in-out infinite alternate;
+}
 /* Footer Button Styling */
 .footer {
-  margin-top: 20px;
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: center;
   margin-top: 2rem;
 }
 
-.next-btn {
+.submit-btn {
+  background-color: grey;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  height: 4rem;
+  width: 16rem;
+  font-weight: bolder;
+
+  cursor: body;
+}
+
+.submit-btn.ready {
+  background-color: #ff7e47;
+  box-shadow: 0 0 10px rgba(246, 106, 63, 0.7);
+
+  animation: pulse 1s infinite;
+
+  font-weight: bolder;
+  cursor: pointer;
+}
+.footer.next-question {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.submit-btn.next-question {
   background-color: #ff7e47;
   color: white;
   padding: 10px 20px;
@@ -95,8 +170,21 @@ header {
   font-size: 1.5rem;
   cursor: pointer;
   height: 4rem;
-  width: 13rem;
+  width: 16rem;
   font-weight: bolder;
+
+  cursor: body;
+}
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 (white);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(246, 106, 63, 0.528);
+  }
+  100% {
+    box-shadow: 0 0 0 0 white;
+  }
 }
 
 /* Responsive Design for Smaller Screens */
@@ -123,4 +211,186 @@ header {
   font-size: 1.5rem;
   box-shadow: 0px 0px 10px 3px #f86120;
   font-weight: bold;
+}
+
+.hide {
+  display: none;
+}
+/*time-out styles*/
+.timeout-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 3rem;
+}
+.timeOut-container {
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 60vw;
+  max-height: 80vh;
+  width: 60vw;
+  height: 30vh;
+  animation: slideIn 1s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.timeout-message h1 {
+  font-weight: bolder;
+  margin-bottom: 5px;
+  font-size: 50px;
+}
+
+.timeout-message p {
+  font-weight: 300;
+  margin-bottom: 20px;
+  font-size: 25px;
+  font-weight: lighter;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  transition: background-color 0.3s, transform 0.3s;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  height: 30px;
+  font-size: 25px;
+}
+
+.btn-try-again {
+  background-color: #ff7e47;
+  color: white;
+  height: 30px;
+}
+
+.btn-homepage {
+  background-color: rgb(3, 3, 157);
+  color: white;
+}
+
+.btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    width: 90%;
+    padding: 20px;
+  }
+  .timeOut-container {
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+  }
+  .timeout-message h1 {
+    font-weight: 500;
+    margin-bottom: 15px;
+    font-size: 20px;
+  }
+  .timeout-message p {
+    font-weight: 300;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: lighter;
+  }
+  .btn {
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    transition: background-color 0.3s, transform 0.3s;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    height: 15px;
+    font-size: 15px;
+  }
+}
+/*fireworks*/
+
+#firework-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Ensure it's above the body but below the content */
+}
+
+.particle {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  opacity: 1; /* Set to 1 for full visibility */
+}
+
+#quiz-completion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  position: relative; /* Ensure it's positioned relative to the body */
+  z-index: 2; /* Above the fireworks */
+}
+
+.quiz-content {
+  background: rgba(0, 0, 0, 0.8); /* Semi-transparent for readability */
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  max-width: 600px;
+  width: 100%;
+}
+
+/* ... rest of your CSS ... */
+
+h1,
+p {
+  margin-bottom: 20px;
+}
+
+h1 span,
+p#score span {
+  color: #ffd700; /* Golden color for emphasis */
+}
+
+.quiz-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #ff7e47;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.quiz-button:hover {
+  background-color: rgb(175, 60, 7);
 }

@@ -238,7 +238,7 @@ nav {
   animation: pulse 1s infinite;
 
   font-weight: bolder;
-  cursor: body;
+  cursor: pointer;
 }
 
 @keyframes pulse {
