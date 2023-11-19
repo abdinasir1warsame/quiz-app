@@ -332,7 +332,7 @@ function renderTimeOutSection() {
                     <h1>Oops... Time's Up!</h1>
                     <p>Don't worry, you can try again or explore more.</p>
                     <div class="action-buttons">
-                        <a href="./science-quiz.html" class="btn btn-try-again">Try Again</a>
+                        <a href="./maths-quiz.html" class="btn btn-try-again">Try Again</a>
                         <a href="./index.html" class="btn btn-homepage">Go to Homepage</a>
                     </div>
                 </div>
