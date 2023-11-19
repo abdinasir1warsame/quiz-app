@@ -171,6 +171,9 @@ function startTimer() {
   countdown = setInterval(() => {
     seconds--;
     timerElement.textContent = seconds;
+    if (seconds === 4) {
+      playSound('countdownSound'); // Play countdown sound for last 4 seconds
+    }
     if (seconds <= 0) {
       clearInterval(countdown);
       renderTimeOutSection(); // Render the timeout section when time runs out
@@ -183,8 +186,9 @@ function resetSubmitButton() {
   const submitButton = document.getElementById('submit-question');
   const btnText = document.querySelector('#submit-question .btn-text');
   submitButton.classList.remove('ready', 'next-question');
+  const footer = document.querySelector('.footer');
   btnText.textContent = 'Submit Answer';
-
+  footer.classList.remove('next-question');
   submitButton.removeEventListener('click', moveToNextQuestion);
   submitButton.addEventListener('click', onSubmitClick);
 }
@@ -198,11 +202,21 @@ function onSubmitClick() {
   }
 }
 
+// Function to play sound by given ID
+function playSound(soundId) {
+  const sound = document.getElementById(soundId);
+  if (sound) {
+    sound.currentTime = 0;
+    sound.play();
+  }
+}
+
 // Function to check the answer and apply styles
 function checkAnswer() {
   const selectedOption = document.querySelector('.options-box .option.chosen');
   const submitButton = document.getElementById('submit-question');
   const btnText = document.querySelector('#submit-question .btn-text');
+  const footer = document.querySelector('.footer');
 
   if (selectedOption) {
     const selectedAnswer = selectedOption.textContent;
@@ -212,12 +226,15 @@ function checkAnswer() {
       selectedOption.classList.add('correct');
       score++;
       updateScoreDisplay();
+      playSound('correctAnswerSound');
     } else {
       selectedOption.classList.add('wrong');
+      playSound('wrongAnswerSound');
     }
 
     submitButton.classList.add('next-question');
     btnText.textContent = 'Next Question';
+    footer.classList.add('next-question');
 
     submitButton.removeEventListener('click', onSubmitClick);
     submitButton.addEventListener('click', moveToNextQuestion);
@@ -276,13 +293,33 @@ function endQuiz() {
     `;
 
   initiateFireworks();
+  storeQuizScore(score);
 }
 
+function storeQuizScore(newScore) {
+  let scores = JSON.parse(localStorage.getItem('quizScores')) || [];
+
+  scores.unshift(newScore);
+
+  scores = scores.slice(0, 10);
+
+  localStorage.setItem('quizScores', JSON.stringify(scores));
+}
+
+let fireworksInitiated = false;
+
 function initiateFireworks() {
+  if (fireworksInitiated) return;
+  fireworksInitiated = true;
+
   const container = document.getElementById('firework-container');
   const clappingSound = document.getElementById('clapping');
   const whistlingSound = document.getElementById('whistling');
   const fireworkSound = document.getElementById('fireworkSound');
+
+  clappingSound.loop = false;
+  whistlingSound.loop = false;
+  fireworkSound.loop = false;
 
   function playSound(sound) {
     sound.currentTime = 0;
@@ -323,13 +360,13 @@ function initiateFireworks() {
         container.removeChild(particle);
       }, explosionDuration);
     }
-
-    playSound(fireworkSound);
-    setTimeout(() => playSound(clappingSound), 500);
-    setTimeout(() => playSound(whistlingSound), 1000);
   }
 
-  setInterval(createFirework, 2000);
+  playSound(fireworkSound);
+  setTimeout(() => playSound(clappingSound), 500);
+  setTimeout(() => playSound(whistlingSound), 1000);
+
+  createFirework();
 }
 
 // Function to reset the styles of all options

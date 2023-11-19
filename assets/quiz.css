@@ -25,6 +25,41 @@ header {
     0 0 40px #ff7e47;
   animation: glow 0.2s ease-in-out infinite alternate;
 }
+#science-title {
+  font-size: 5rem;
+  color: #4a90e2;
+  text-shadow: 0 0 10px #47fcff, 0 0 60px black, 0 0 80px #47eaff,
+    0 0 40px #47ddff;
+  animation: glow 0.2s ease-in-out infinite alternate;
+}
+#sports-title {
+  font-size: 5rem;
+  color: #7ed321;
+  text-shadow: 0 0 10px rgb(77, 255, 71), 0 0 60px black, 0 0 80px #47ff47,
+    0 0 40px #3e953a;
+  animation: glow 0.2s ease-in-out infinite alternate;
+}
+#maths-title {
+  font-size: 5rem;
+  color: #50e3c2;
+  text-shadow: 0 0 10px #0e6b57, 0 0 60px black, 0 0 80px #61ae9d,
+    0 0 40px #50c6e3;
+  animation: glow 0.2s ease-in-out infinite alternate;
+}
+#history-title {
+  font-size: 5rem;
+  color: #bd10e0;
+  text-shadow: 0 0 10px #d566eb, 0 0 60px black, 0 0 80px #6b087e,
+    0 0 40px #572d5f;
+  animation: glow 0.2s ease-in-out infinite alternate;
+}
+#geography-title {
+  font-size: 5rem;
+  color: #f8e71c;
+  text-shadow: 0 0 10px #cfc235, 0 0 60px black, 0 0 80px #7e761f,
+    0 0 40px #a19401;
+  animation: glow 0.2s ease-in-out infinite alternate;
+}
 
 @keyframes glow {
   from {
@@ -93,7 +128,7 @@ header {
 }
 .option.correct {
   background-color: white;
-  color: rgb(150, 237, 140);
+  color: #93f820;
   border: 2px solid #d6602d;
   border-radius: 5px;
   padding: 25px;
@@ -158,11 +193,12 @@ header {
 .footer.next-question {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-end;
   margin-top: 2rem;
 }
 .submit-btn.next-question {
   background-color: #ff7e47;
+  box-shadow: 0 0 10px rgba(246, 106, 63, 0.7);
   color: white;
   padding: 10px 20px;
   border: none;
@@ -350,7 +386,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 50vh;
   color: white;
   text-align: center;
   padding: 20px;
@@ -376,21 +412,20 @@ p {
 
 h1 span,
 p#score span {
-  color: #ffd700; /* Golden color for emphasis */
+  color: #ff7e47; /* Golden color for emphasis */
 }
 
 .quiz-button {
   margin-top: 20px;
   padding: 10px 20px;
-  background-color: #ff7e47;
+  background-color: rgb(29, 29, 199);
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
-  transition: background-color 0.3s ease;
 }
 
 .quiz-button:hover {
-  background-color: rgb(175, 60, 7);
+  background-color: rgb(7, 27, 175);
 }

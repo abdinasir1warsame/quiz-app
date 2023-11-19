@@ -9,28 +9,37 @@
   <body>
     <div class="container">
       <header>
-        <h1 class="title">Sports Quiz</h1>
+        <h1 id="sports-title" class="title">Sports Quiz</h1>
       </header>
-      <div class="game-info">
-        <div class="timer" id="timer">30</div>
-        <div class="score" id="score">Score: 0</div>
-      </div>
-      <main class="quiz-area">
-        <div class="question-box">
-          <h2 id="question" class="question">
-            Which country hosted the 2016 Summer Olympics?
-          </h2>
+      <main>
+        <div class="game-info">
+          <div class="timer" id="timer">30</div>
+          <div class="score" id="score">Score: 0</div>
         </div>
-        <div class="options-box">
-          <button class="option" id="optionA">A: China</button>
-          <button class="option" id="optionB">B: Brazil</button>
-          <button class="option" id="optionC">C: United Kingdom</button>
-          <button class="option" id="optionD">D: Australia</button>
-        </div>
+        <section id="quiz-container" class="quiz-area">
+          <div class="question-box">
+            <h2 id="question" class="question">
+              
+            </h2>
+          </div>
+          <div class="options-box">
+            <button class="option" id="optionA"></button>
+            <button class="option" id="optionB"></button>
+            <button class="option" id="optionC"></button>
+            <button class="option" id="optionD"></button>
+          </div>
+        </section>
+        <footer class="footer">
+          <button id="submit-question" class="submit-btn">
+            <span id="btn-text" class="btn-text">Submit Answer</span>
+          </button>
+        </footer>
+        <audio id="correctAnswerSound" src="./assets/audio/correct answer.mp3" preload="auto"></audio>
+<audio id="wrongAnswerSound" src="./assets/audio/wrong answer.mp3" preload="auto"></audio>
+<audio id="countdownSound" src="./assets/audio/last  4 seconds.mp3" preload="auto"></audio>
       </main>
-      <footer class="footer">
-        <button id="next-question" class="next-btn">Next Question</button>
-      </footer>
-    </div>
+
+
+    <script src="./assets/javascript/sports-quiz.js"></script>
   </body>
 </html>
