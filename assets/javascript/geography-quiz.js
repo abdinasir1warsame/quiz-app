@@ -94,7 +94,7 @@ function loadQuestion() {
   });
 
   resetSubmitButton();
-  startTimer(); // Start the timer for the new question
+  startTimer();
 }
 
 // Function to start or reset the timer
@@ -107,12 +107,12 @@ function startTimer() {
   countdown = setInterval(() => {
     seconds--;
     timerElement.textContent = seconds;
-    if (seconds === 4) {
-      playSound('countdownSound'); // Play countdown sound for last 4 seconds
+    if (seconds === 10) {
+      playSound('countdownSound');
     }
     if (seconds <= 0) {
       clearInterval(countdown);
-      renderTimeOutSection(); // Render the timeout section when time runs out
+      renderTimeOutSection();
     }
   }, 1000);
 }
@@ -153,6 +153,7 @@ function checkAnswer() {
   const submitButton = document.getElementById('submit-question');
   const btnText = document.querySelector('#submit-question .btn-text');
   const footer = document.querySelector('.footer');
+  const countdownSound = document.getElementById('countdownSound');
 
   if (selectedOption) {
     const selectedAnswer = selectedOption.textContent;
@@ -166,6 +167,11 @@ function checkAnswer() {
     } else {
       selectedOption.classList.add('wrong');
       playSound('wrongAnswerSound');
+    }
+
+    if (countdownSound) {
+      countdownSound.pause();
+      countdownSound.currentTime = 0;
     }
 
     submitButton.classList.add('next-question');
@@ -303,6 +309,12 @@ function initiateFireworks() {
   setTimeout(() => playSound(whistlingSound), 1000);
 
   createFirework();
+
+  const fireworkInterval = setInterval(createFirework, 2000);
+
+  setTimeout(() => {
+    clearInterval(fireworkInterval);
+  }, 60000);
 }
 
 // Function to reset the styles of all options

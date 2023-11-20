@@ -13,7 +13,7 @@ header {
 
 .container {
   width: 80%;
-
+  margin: 20px auto;
   padding: 20px;
 }
 
@@ -392,10 +392,11 @@ p#score span {
 
 @media screen and (max-width: 600px) {
   header {
+    display: flex;
+    flex: row;
+    justify-content: center;
     text-align: center;
-    margin-bottom: 30px;
   }
-
   .container {
     width: 90%;
     padding: 20px;
@@ -428,6 +429,9 @@ p#score span {
     font-size: 15px;
   }
   .footer.next-question {
-    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: 2rem;
   }
 }

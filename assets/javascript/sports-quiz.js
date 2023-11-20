@@ -155,7 +155,7 @@ function startTimer() {
   countdown = setInterval(() => {
     seconds--;
     timerElement.textContent = seconds;
-    if (seconds === 4) {
+    if (seconds === 10) {
       playSound('countdownSound'); // Play countdown sound for last 4 seconds
     }
     if (seconds <= 0) {
@@ -214,6 +214,12 @@ function checkAnswer() {
     } else {
       selectedOption.classList.add('wrong');
       playSound('wrongAnswerSound');
+    }
+
+    const countdownSound = document.getElementById('countdownSound');
+    if (countdownSound) {
+      countdownSound.pause();
+      countdownSound.currentTime = 0;
     }
 
     submitButton.classList.add('next-question');

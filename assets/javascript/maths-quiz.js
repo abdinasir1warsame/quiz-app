@@ -86,7 +86,7 @@ function startTimer() {
   countdown = setInterval(() => {
     seconds--;
     timerElement.textContent = seconds;
-    if (seconds === 4) {
+    if (seconds === 10) {
       playSound('countdownSound'); // Play countdown sound for last 4 seconds
     }
     if (seconds <= 0) {
@@ -132,6 +132,7 @@ function checkAnswer() {
   const submitButton = document.getElementById('submit-question');
   const btnText = document.querySelector('#submit-question .btn-text');
   const footer = document.querySelector('.footer');
+  const countdownSound = document.getElementById('countdownSound');
 
   if (selectedOption) {
     const selectedAnswer = selectedOption.textContent;
@@ -145,6 +146,11 @@ function checkAnswer() {
     } else {
       selectedOption.classList.add('wrong');
       playSound('wrongAnswerSound');
+    }
+    
+    if (countdownSound) {
+      countdownSound.pause();
+      countdownSound.currentTime = 0;
     }
 
     submitButton.classList.add('next-question');
