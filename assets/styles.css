@@ -125,15 +125,7 @@ nav {
   gap: 30px;
 }
 .category-prompt {
-  font-size: 42px;
-  color: #f8911c;
-  text-shadow: 0 0 10px #cf8735, 0 0 60px black, 0 0 80px rgb(246, 153, 33),
-    0 0 40px #a19401;
-  animation: glow 2s ease-in-out infinite alternate;
-  text-align: center;
-  margin: 2px;
-  margin-top: 3rem;
-  margin-bottom: 2rem;
+  display: none;
 }
 @keyframes glow {
   from {
@@ -301,6 +293,17 @@ body {
   .nav-burger {
     display: flex;
     margin: 6px;
+  }
+  .category-prompt {
+    font-size: 42px;
+    color: #f8911c;
+    text-shadow: 0 0 10px #cf8735, 0 0 60px black, 0 0 80px rgb(246, 153, 33),
+      0 0 40px #a19401;
+    animation: glow 2s ease-in-out infinite alternate;
+    text-align: center;
+    margin: 2px;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
   }
 
   .nav-options {
