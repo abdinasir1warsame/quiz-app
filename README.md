@@ -76,3 +76,7 @@ The quiz pages (e.g., `science-quiz.js`, `maths-quiz.js`, etc.) share a common s
    - After completing the quiz, view your results, including the number of correct and incorrect answers.
 
 Enjoy the Quiz App and have fun testing your knowledge! 🌟🎓
+
+# deployed url Links
+
+-deployed url:[https://abdinasir1warsame.github.io/quiz-app/](https://abdinasir1warsame.github.io/quiz-app/)
