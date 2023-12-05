@@ -232,7 +232,7 @@ function checkAnswer() {
       selectedOption.classList.add('wrong');
       playSound('wrongAnswerSound');
     }
-    
+
     if (countdownSound) {
       countdownSound.pause();
       countdownSound.currentTime = 0;
@@ -299,7 +299,7 @@ function endQuiz() {
     `;
 
   initiateFireworks();
-  storeQuizScore(score);
+  logQuizScores();
 }
 
 function storeQuizScore(newScore) {
@@ -430,6 +430,9 @@ function renderTimeOutSection() {
             </div>
         </div>`;
 }
-
+function logQuizScores() {
+  let scores = JSON.parse(localStorage.getItem('quizScores')) || [];
+  console.log('Quiz Scores:', scores);
+}
 // Start the quiz when the page loads
 window.addEventListener('load', startQuiz);
