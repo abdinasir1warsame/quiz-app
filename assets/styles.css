@@ -124,6 +124,27 @@ nav {
   justify-content: center;
   gap: 30px;
 }
+.category-prompt {
+  font-size: 42px;
+  color: #f8911c;
+  text-shadow: 0 0 10px #cf8735, 0 0 60px black, 0 0 80px rgb(246, 153, 33),
+    0 0 40px #a19401;
+  animation: glow 2s ease-in-out infinite alternate;
+  text-align: center;
+  margin: 2px;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+@keyframes glow {
+  from {
+    text-shadow: 0 0 20px #cf8735, 0 0 30px #060605, 0 0 40px #020101,
+      0 0 50px black;
+  }
+  to {
+    text-shadow: 0 0 10px black, 0 0 20px #f8f8f8, 0 0 30px rgb(19, 9, 9),
+      0 0 40px rgb(0, 0, 0);
+  }
+}
 
 .category-card {
   background-color: #ffffff;
@@ -279,6 +300,7 @@ body {
   }
   .nav-burger {
     display: flex;
+    margin: 6px;
   }
 
   .nav-options {
@@ -287,7 +309,7 @@ body {
     width: 100%;
     height: 50%;
     position: absolute;
-    top: 50px;
+    top: 56px;
     left: 0;
     background-color: rgb(255, 255, 255);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -309,21 +331,36 @@ body {
 
   .categories-container {
     gap: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
   }
   .categories-title {
     display: flex;
     flex-direction: row;
     justify-content: center;
-
-    font-size: 35px;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+    font-size: 43px;
   }
 
   .category-card {
-    width: 250px;
+    width: 270px;
   }
   .category-card.chosen {
     width: 270px;
   }
+  /*category card details*/
+  .category-title {
+    font-size: 24px;
+  }
+
+  .category-description {
+    font-size: 18px;
+
+    margin-top: 10px;
+  }
+  /*******************/
 
   .btn-container {
     display: flex;
@@ -331,8 +368,8 @@ body {
     justify-content: center;
   }
   .play-btn {
-    width: 330px;
-    height: 100px;
+    width: 310px;
+    height: 80px;
 
     margin-top: 4rem;
     margin-bottom: 2rem;
