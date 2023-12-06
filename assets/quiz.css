@@ -415,16 +415,22 @@ p#score span {
   .container {
     width: 90%;
     padding: 20px;
-    padding-top: 0;
+    padding-top: 30px;
+    padding-bottom: 40px;
     height: 100vh;
     margin: 0;
-    align-items: center;
-  }
-  main {
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+  }
+  main {
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-height: 50vh;
+    
   
   }
   .title {
@@ -442,7 +448,7 @@ p#score span {
     border-radius: 5px;
     padding: 25px;
     font-size: 1.2rem;
-    height: 75px;
+    height: 70px;
     letter-spacing: 3px;
     margin-bottom: 0px;
   }
@@ -532,7 +538,7 @@ p#score span {
   }
 }
 
-@media screen and (min-width: 410px) and (max-width: 850px) {
+@media screen and (min-width: 395px) and (max-width: 700px) {
   .options-box {
     grid-template-columns: 1fr;
    
