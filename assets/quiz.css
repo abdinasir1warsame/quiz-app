@@ -407,7 +407,7 @@ p#score span {
   background-color: rgb(7, 27, 175);
 }
 /* Responsive Design for Smaller Screens */
-@media only screen and (max-width: 380px) {
+@media only screen and (max-width: 395px) {
   .options-box {
     grid-template-columns: 1fr;
   }
@@ -532,7 +532,7 @@ p#score span {
   }
 }
 
-@media screen and (min-width: 410px) and (max-width: 600px) {
+@media screen and (min-width: 410px) and (max-width: 850px) {
   .options-box {
     grid-template-columns: 1fr;
    
