@@ -424,6 +424,7 @@ p#score span {
     display: flex;
     flex-direction: column;
     justify-content: center;
+  
   }
   .title {
  display: none;
@@ -440,7 +441,7 @@ p#score span {
     border-radius: 5px;
     padding: 25px;
     font-size: 1.2rem;
-    height: 70px;
+    height: 75px;
     letter-spacing: 3px;
     margin-bottom: 0px;
   }
@@ -486,7 +487,10 @@ p#score span {
     height: 45px;
     font-size: 20px;
   }
-
+  .footer {
+  
+    margin-top: 1rem;
+  }
   .footer.next-question {
     display: flex;
     flex-direction: row;
@@ -530,12 +534,13 @@ p#score span {
 @media screen and (min-width: 410px) and (max-width: 600px) {
   .options-box {
     grid-template-columns: 1fr;
-    margin-top: 2em;
+   
   }
 
   .container {
     width: 90%;
-    padding: 20px;
+    padding: 10px;
+    padding-top: 0;
     height: 100vh;
     margin: 0;
     align-items: center;
@@ -545,6 +550,7 @@ p#score span {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    
   }
   .title {
     display: none;
@@ -559,9 +565,9 @@ p#score span {
     color: #fb6c2f;
     border: 2px solid #d6602d;
     border-radius: 5px;
-    padding: 25px;
+    padding: 21px;
     font-size: 1.6rem;
-    height: 90px;
+    height: 110px;
     letter-spacing: 3px;
   }
 
@@ -598,6 +604,10 @@ p#score span {
     font-weight: lighter;
     margin-bottom: 2em;
   }
+  .footer {
+ 
+    margin-top: 0.5rem;
+  }
 
   .footer.next-question {
     display: flex;
@@ -613,6 +623,7 @@ p#score span {
     letter-spacing: 0.5px;
     height: 50px;
     font-size: 20px;
+    
   }
 
   .submit-btn {
@@ -626,7 +637,7 @@ p#score span {
     height: 5rem;
     width: 18rem;
     font-weight: bolder;
-
+    margin-top: 0px;
     cursor: body;
   }
 
