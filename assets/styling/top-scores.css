@@ -129,10 +129,11 @@ tbody tr:nth-child(even) {
     margin-top: 1em;
   }
   th {
-    font: 22px;
+    font: 28px;
+    text-align: center;
   }
   td {
-    font-size: 17px;
+    font-size: 15px;
     text-align: center;
   }
 }
