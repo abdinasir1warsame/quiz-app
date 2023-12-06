@@ -1,0 +1,138 @@
+* {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  background: radial-gradient(ellipse at center, white 80%, #f54900d0 100%);
+  color: black;
+  padding: 10px;
+}
+
+/********main styling***********/
+main {
+  font-weight: bold;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.homeIcon-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100vw;
+}
+.home-icon {
+  font-size: 50px;
+  color: #ed3f0a;
+  margin-left: 40px;
+  text-shadow: 0 15px 25px rgba(0, 0, 0, 0.5), 0 35px 60px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.home-icon:hover,
+.About-us-link:hover {
+  transform: translateY(-5px);
+  text-shadow: 0 10px 20px rgba(0, 0, 0, 0.927);
+  cursor: pointer;
+}
+.About-us-link {
+  font-size: 50px;
+  color: #ed3f0a;
+
+  text-shadow: 0 15px 25px rgba(0, 0, 0, 0.5), 0 35px 60px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  margin-right: 40px;
+}
+
+h1 {
+  text-align: center;
+  color: #ff5722;
+  font-size: 50px;
+}
+
+table {
+  width: 80%;
+  margin-top: 20px;
+  border-collapse: collapse;
+  border: 1px solid #444;
+  background-color: #e8eaee;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+th,
+td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #444;
+}
+td {
+  font-size: 20px;
+}
+
+th {
+  background-color: #ed3f0a;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-weight: bolder;
+  font-size: 16px;
+}
+
+th:hover {
+  background-color: #ff6536;
+}
+
+tbody tr:hover {
+  background-color: #d2d5db;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #ffffff;
+}
+tbody tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .home-icon,
+  .About-us-link {
+    font-size: 35px;
+  }
+  .home-icon {
+    margin-left: 5px;
+  }
+
+  .About-us-link {
+    margin-right: 15px;
+  }
+
+  h1 {
+    text-align: center;
+    color: #ff5722;
+    font-size: 40px;
+    margin-top: 1em;
+  }
+  th {
+    font: 22px;
+  }
+  td {
+    font-size: 17px;
+    text-align: center;
+  }
+}
