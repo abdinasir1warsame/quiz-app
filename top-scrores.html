@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/styling/top-scores.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <head>
+      <div class="homeIcon-container">
+        <a href="./index.html"><i class="fas fa-home home-icon"></i></a>
+
+        <h2 class="About-us-link">About Us</h2>
+      </div>
+      <h1>Top Scores</h1>
+    </head>
+    <main>
+      <table id="scoresTable">
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Name</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody id="scoresBody">
+          <tr>
+            <td>1.</td>
+            <td>John Doe</td>
+            <td>95</td>
+          </tr>
+          <tr>
+            <td>2.</td>
+            <td>Jane Smith</td>
+            <td>90</td>
+          </tr>
+          <tr>
+            <td>3.</td>
+            <td>Bob Johnson</td>
+            <td>85</td>
+          </tr>
+          <tr>
+            <td>4.</td>
+            <td>Alice Williams</td>
+            <td>80</td>
+          </tr>
+          <tr>
+            <td>5.</td>
+            <td>Charlie Brown</td>
+            <td>75</td>
+          </tr>
+          <tr>
+            <td>6.</td>
+            <td>Eva Davis</td>
+            <td>70</td>
+          </tr>
+          <tr>
+            <td>7.</td>
+            <td>Frank Miller</td>
+            <td>65</td>
+          </tr>
+          <tr>
+            <td>8.</td>
+            <td>Gina Lee</td>
+            <td>60</td>
+          </tr>
+          <tr>
+            <td>9.</td>
+            <td>Harry White</td>
+            <td>55</td>
+          </tr>
+          <tr>
+            <td>10.</td>
+            <td>Isabel Perez</td>
+            <td>50</td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+
+    <script>
+      function toggleMenu() {
+        var navOptions = document.querySelector('.nav-options');
+        navOptions.classList.toggle('show');
+      }
+    </script>
+    <script src="./assets/javascript/top-scores.js"></script>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/styling/quiz.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+      
+        <h1 id="science-title" class="title">Science Quiz</h1>
+      </header>
+      <main>
+        <div class="game-info">
+          <div class="timer" id="timer">30</div>
+          <div class="score" id="score">Score: 0</div>
+        </div>
+        <section id="quiz-container" class="quiz-area">
+          <div class="question-box">
+            <h2 id="question" class="question">
+              Which planet in our solar system is known for its prominent rings?
+            </h2>
+          </div>
+          <div class="options-box">
+            <button class="option" id="optionA">A: Jupiter</button>
+            <button class="option" id="optionB">B: Saturn</button>
+            <button class="option" id="optionC">C: Mars</button>
+            <button class="option" id="optionD">D: Venus</button>
+          </div>
+        </section>
+        <footer class="footer">
+          <button id="submit-question" class="submit-btn">
+            <span id="btn-text" class="btn-text">Submit Answer</span>
+          </button>
+        </footer>
+        <audio id="correctAnswerSound" src="./assets/audio/correct answer.mp3" preload="auto"></audio>
+<audio id="wrongAnswerSound" src="./assets/audio/wrong answer.mp3" preload="auto"></audio>
+<audio id="countdownSound" src="./assets/audio/countdown.mp3" preload="auto"></audio>
+      </main>
+
+
+    <script src="./assets/javascript/science-quiz.js"></script>
+  </body>
+</html>

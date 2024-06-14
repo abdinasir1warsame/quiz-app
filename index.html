@@ -4,8 +4,76 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="styles.css" />
-    <script src="./index.js"></script>
+    <link rel="stylesheet" href="./assets/styling/styles.css" />
   </head>
-  <body></body>
+  <body>
+    <!-- navbar section -->
+    <nav>
+      <div class="nav-burger" onclick="toggleMenu()">
+        <div class="burger-bar"></div>
+        <div class="burger-bar"></div>
+        <div class="burger-bar"></div>
+      </div>
+      <div class="nav-options">
+        <a class="nav-links" href="#home">Home</a>
+        <a class="nav-links" href="#Categories">Categories</a>
+        <a class="nav-links" href="./top-scrores.html">Top Scores</a>
+        <a class="nav-links" href="#About">About</a>
+      </div>
+    </nav>
+
+    <main>
+      <!-- categories section -->
+      <div class="categories-title">
+        <h1>Quiz App</h1>
+      </div>
+      <div class="categories-section">
+        <div class="categories-container">
+          <h2 class="category-prompt">Choose Category And Play!</h2>
+          <div class="category-card" id="category-science">
+            <div class="category-icon">🔬</div>
+            <div class="category-title">Science</div>
+            <div class="category-description">
+              Explore the wonders of science.
+            </div>
+          </div>
+          <div class="category-card" id="category-math">
+            <div class="category-icon">🧮</div>
+            <div class="category-title">Math</div>
+            <div class="category-description">Challenge your math skills.</div>
+          </div>
+          <div class="category-card" id="category-history">
+            <div class="category-icon">📜</div>
+            <div class="category-title">History</div>
+            <div class="category-description">Dive into the past.</div>
+          </div>
+          <div class="category-card" id="category-geography">
+            <div class="category-icon">🌍</div>
+            <div class="category-title">Geography</div>
+            <div class="category-description">Travel the world.</div>
+          </div>
+          <div class="category-card" id="category-sports">
+            <div class="category-icon">⚽</div>
+            <div class="category-title">Sports</div>
+            <div class="category-description">Test your sports knowledge.</div>
+          </div>
+        </div>
+      </div>
+      <!-- button section -->
+      <div class="btn-container">
+        <a id="button" class="button" href="">
+          <button id="playButton" class="play-btn not-ready">
+            <span class="btn-text">Play Now</span>
+          </button></a
+        >
+      </div>
+    </main>
+    <script>
+      function toggleMenu() {
+        var navOptions = document.querySelector('.nav-options');
+        navOptions.classList.toggle('show');
+      }
+    </script>
+    <script src="./assets/javascript/index.js"></script>
+  </body>
 </html>
